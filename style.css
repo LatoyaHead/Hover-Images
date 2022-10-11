@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  padding: 10px 3%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 1430px) {
+  .container .halloween {
+    font-size: 50px;
+  }
+  .container .thanksgiving {
+    font-size: 50px;
+  }
+  .container .christmas {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .halloween {
+    font-size: 70px;
+  }
+  .container .thanksgiving {
+    font-size: 70px;
+  }
+  .container .christmas {
+    font-size: 70px;
+  }
+}
+
+.container h1 {
+  color: white;
+  font-size: 70px;
+  position: relative;
+  z-index: 2;
+  -webkit-text-fill-color: whitesmoke;
+  -webkit-text-stroke: 1px #000;
+  cursor: grab;
+  transition: transform 0.5s;
+}
+
+.container .halloween:hover {
+ -webkit-text-fill-color: orangered;
+ transform: translateY(-10px);
+}
+
+.container .thanksgiving:hover {
+ -webkit-text-fill-color: orange;
+ transform: translateY(-10px);
+}
+
+.container .christmas:hover {
+ -webkit-text-fill-color: red;
+ transform: translateY(-10px);
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s;
+}
+
+.container .halloween:hover ~ .images {
+  background-image: url(img/halloween\.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container .thanksgiving:hover ~ .images {
+  background-image: url(img/thanksgiving\ \(1\).jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container .christmas:hover ~ .images {
+  background-image: url(img/christmas.jpg);
+  background-size: cover;
+  background-position: center;
+}
